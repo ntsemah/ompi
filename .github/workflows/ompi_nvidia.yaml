@@ -10,7 +10,7 @@ concurrency:
 jobs:
 
   nvidia_deployment:
-    if: github.repository == 'open-mpi/ompi'
+    if: github.repository == 'ntsemah/ompi'
     runs-on: [self-hosted, linux, x64, nvidia]
     steps:
     - name: Checkout
@@ -41,7 +41,7 @@ jobs:
 #  ( in case of the right repository name)
 # The second condition doesn't work when the workflow was canceled
 
-    if: always() && (github.repository == 'open-mpi/ompi')
+    if: always() && (github.repository == 'ntsemah/ompi')
     needs: [nvidia_deployment, nvidia_build, nvidia_test]
     runs-on: [self-hosted, linux, x64, nvidia]
     steps:
