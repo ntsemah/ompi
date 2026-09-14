@@ -1,5 +1,5 @@
 name: ompi_NVIDIA CI
-on: [pull_request_target]
+on: [pull_request]
 permissions:
   contents: read
 
@@ -16,8 +16,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v6
       with:
-        ref: refs/pull/${{ github.event.pull_request.number }}/merge
-        persist-credentials: false
         submodules: recursive
     - name: Checkout CI scripts
       uses: actions/checkout@v6
