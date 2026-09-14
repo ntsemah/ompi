@@ -16,6 +16,7 @@ jobs:
     - name: Deployment infrastructure
       env:
         PR_NUMBER: ${{ github.event.pull_request.number }}
+        CI_SCRIPTS_REF: fix-security-findings
       run: /start deploy
   nvidia_build:
     needs: [nvidia_deployment]
